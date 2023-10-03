@@ -110,7 +110,10 @@ def get_results(references_results, min_gene_coverage, min_depth_coverage, type_
             for original_reference, headers in references_headers.items():
                 for new_header, original_header in headers.items():
                     if sequence == new_header:
-                        results[original_reference] = original_header.rsplit(type_separator, 1)[1]
+                        if len(original_header.rsplit(type_separator, 1) > 1:
+                            results[original_reference] = original_header.rsplit(type_separator, 1)[1]
+                        else :
+                            results[original_reference] = original_header
                         results_info[original_reference] = \
                             [original_header] + \
                             [references_results[reference][new_header][field] for field in fields]
