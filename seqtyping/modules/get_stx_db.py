@@ -114,7 +114,7 @@ def main():
     with open(os.path.join(args.outdir,
                            'virulence_db.virulence_ecoli.commit_{commit}.problematic_sequences.tab'.format(
                                commit=commit)), 'wt', newline='\n') as writer:
-        for seq in SeqIO.parse(os.path.join(virulencefinder_db, 'virulence_ecoli.fsa'), 'fasta'):
+        for seq in SeqIO.parse(os.path.join(virulencefinder_db, 'stx.fsa'), 'fasta'):
             if seq.id.lower().startswith('stx'):
                 subtype = seq.id.split(':')
                 if len(subtype) == 4:
